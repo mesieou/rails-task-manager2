@@ -1,0 +1,12 @@
+<h1 class="mt-4">Tasks</h1>
+<% @tasks.each do |task| %>
+  <div class="div p-3 border w-50 bg-white">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex align-items-baseline">
+        <input type="checkbox" <%= task.completed ? 'checked' : '' %> >
+        <p class="pl-2"><strong><%= task.title %></strong></p>
+      </div>
+      <p><%= task.details %></p>
+    </div>
+  </div>
+<% end %>
