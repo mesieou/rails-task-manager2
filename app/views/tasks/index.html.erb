@@ -6,7 +6,11 @@
         <input type="checkbox" <%= task.completed ? 'checked' : '' %> >
         <p class="pl-2"><strong><%= task.title %></strong></p>
       </div>
-      <%= link_to 'Delete', task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+      <%= link_to '',
+          task_path(task),
+          data: {turbo_method: :delete,
+          turbo_confirm: "Are you sure?"},
+          class: "fa-sharp fa-solid fa-trash" %>
     </div>
   </div>
 <% end %>
