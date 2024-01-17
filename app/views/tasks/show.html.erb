@@ -1,2 +1,12 @@
-<h1><%= @task.title%></h1>
-<p><%= @task.details %></p>
+<div class="d-flex justify-content-between align-items-baseline w-50 mb-2">
+  <h1 class="mt-5"><%= @task.title%></h1>
+  <%= link_to "Edit", task_edit_path(@task), class: "btn btn-outline-secondary" %>
+</div>
+<p class="p-4 bg-white rounded w-50"><%= @task.details %></p>
+<div class="d-flex align-items-baseline">
+  <input type="checkbox"<%= @task.completed ? 'checked' : '' %>>
+  <p class="ml-2"><%= @task.completed ? 'This task is completed' : 'This task is not yet completed' %></p>
+</div>
+
+<div class="container border-top my-3"></div>
+<%= link_to "Back to home", tasks_path  %>

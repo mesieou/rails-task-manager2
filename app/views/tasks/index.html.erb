@@ -1,10 +1,10 @@
 <h1 class="mt-4">Tasks</h1>
 <% @tasks.each do |task| %>
-  <div class="div p-3 border w-50 bg-white">
+  <div class="div p-3 border w-25 bg-white">
     <div class="d-flex justify-content-between">
       <div class="d-flex align-items-baseline">
         <input type="checkbox" <%= task.completed ? 'checked' : '' %> >
-        <p class="pl-2"><strong><%= task.title %></strong></p>
+        <%= link_to task.title, task_path(task), class: "pl-2 text-dark" %>
       </div>
       <%= link_to '',
           task_path(task),
@@ -12,5 +12,12 @@
           turbo_confirm: "Are you sure?"},
           class: "fa-sharp fa-solid fa-trash" %>
     </div>
+    <span class="border-bottom"></span>
+
   </div>
 <% end %>
+<span class="border-bottom"></span>
+
+<div class="d-flex m-3 align-items-baseline">
+  <%= link_to '➕ Add a Task', new_path %>
+</div>
